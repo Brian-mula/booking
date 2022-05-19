@@ -167,28 +167,15 @@ class _SelectTicketPageState extends ConsumerState<SelectTicketPage> {
                                           color: ThemeFile.bookingDeepBlack,
                                           size: 16,
                                         ),
-                                        Row(
-                                          children: [
-                                            Icon(
-                                              Icons.watch_later,
-                                              color: ThemeFile.bookingBlack1,
-                                              size: 20,
-                                            ),
-                                            BigTextWidget(
-                                              text: "13:00",
-                                              size: 16,
-                                              color: ThemeFile.bookingBlack1,
-                                            )
-                                          ],
+                                        BigTextWidget(
+                                          text: "13:00",
+                                          size: 16,
+                                          color: ThemeFile.bookingBlack1,
                                         )
                                       ],
                                     ),
                                     Row(
                                       children: [
-                                        Icon(
-                                          Icons.watch_later,
-                                          color: ThemeFile.bookingBlack1,
-                                        ),
                                         Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
@@ -214,19 +201,10 @@ class _SelectTicketPageState extends ConsumerState<SelectTicketPage> {
                                           color: ThemeFile.bookingDeepBlack,
                                           size: 16,
                                         ),
-                                        Row(
-                                          children: [
-                                            Icon(
-                                              Icons.watch_later,
-                                              color: ThemeFile.bookingBlack1,
-                                              size: 20,
-                                            ),
-                                            BigTextWidget(
-                                                text: "20:00",
-                                                size: 16,
-                                                color: ThemeFile.bookingBlack1)
-                                          ],
-                                        )
+                                        BigTextWidget(
+                                            text: "20:00",
+                                            size: 16,
+                                            color: ThemeFile.bookingBlack1)
                                       ],
                                     )
                                   ]),
