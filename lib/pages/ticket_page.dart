@@ -171,13 +171,13 @@ class _SelectTicketPageState extends ConsumerState<SelectTicketPage> {
                                           children: [
                                             Icon(
                                               Icons.watch_later,
-                                              color: ThemeFile.bookingBlue500,
+                                              color: ThemeFile.bookingBlack1,
                                               size: 20,
                                             ),
                                             BigTextWidget(
                                               text: "13:00",
                                               size: 16,
-                                              color: ThemeFile.bookingBlue500,
+                                              color: ThemeFile.bookingBlack1,
                                             )
                                           ],
                                         )
@@ -218,14 +218,13 @@ class _SelectTicketPageState extends ConsumerState<SelectTicketPage> {
                                           children: [
                                             Icon(
                                               Icons.watch_later,
-                                              color: ThemeFile.bookingBlue500,
+                                              color: ThemeFile.bookingBlack1,
                                               size: 20,
                                             ),
                                             BigTextWidget(
-                                              text: "20:00",
-                                              size: 16,
-                                              color: ThemeFile.bookingBlue500,
-                                            )
+                                                text: "20:00",
+                                                size: 16,
+                                                color: ThemeFile.bookingBlack1)
                                           ],
                                         )
                                       ],
