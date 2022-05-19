@@ -37,16 +37,21 @@ class _SelectTicketPageState extends ConsumerState<SelectTicketPage> {
                     ),
                   ),
                   BigTextWidget(
-                    text: "Choose the Ticket",
-                    color: ThemeFile.bookingBlueGrey,
+                    text: "Search Results",
+                    color: ThemeFile.bookingDeepBlack,
                   ),
+                  Icon(
+                    Icons.more_vert,
+                    size: 20,
+                    color: ThemeFile.bookingDeepBlack,
+                  )
                 ],
               )),
 
           Container(
             color: ThemeFile.bookingBlueGrey,
             padding:
-                const EdgeInsets.only(top: 10, right: 10, bottom: 10, left: 40),
+                const EdgeInsets.only(top: 10, right: 10, bottom: 10, left: 20),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -103,13 +108,13 @@ class _SelectTicketPageState extends ConsumerState<SelectTicketPage> {
                       child: Container(
                         margin: const EdgeInsets.only(top: 10),
                         padding:
-                            const EdgeInsets.only(top: 10, left: 5, right: 10),
+                            const EdgeInsets.only(top: 10, left: 3, right: 10),
                         color: Colors.white,
                         child: Column(
                           children: [
                             ListTile(
                               leading: Container(
-                                padding: const EdgeInsets.all(10),
+                                padding: const EdgeInsets.all(6),
                                 decoration: BoxDecoration(
                                     color: Colors.pink.shade500,
                                     borderRadius: BorderRadius.circular(20)),
@@ -120,21 +125,21 @@ class _SelectTicketPageState extends ConsumerState<SelectTicketPage> {
                               ),
                               title: BigTextWidget(
                                 text: "Royal Rift",
-                                color: Colors.blue.shade700,
+                                color: ThemeFile.bookingBlueGrey,
                                 size: 18,
                               ),
                               subtitle: BigTextWidget(
                                 text: "Executive(A)",
                                 size: 16,
-                                color: Colors.black38,
+                                color: ThemeFile.bookingBlack1,
                               ),
                               trailing: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   BigTextWidget(
                                     text: "Ksh. 1000",
-                                    size: 17,
-                                    color: Colors.blue.shade600,
+                                    size: 18,
+                                    color: ThemeFile.bookingDeepBlack,
                                   ),
                                   BigTextWidget(
                                     text: "8 seats left",
@@ -159,34 +164,46 @@ class _SelectTicketPageState extends ConsumerState<SelectTicketPage> {
                                       children: [
                                         BigTextWidget(
                                           text: "Nairobi",
-                                          color: Colors.black26,
+                                          color: ThemeFile.bookingDeepBlack,
                                           size: 16,
                                         ),
                                         Row(
                                           children: [
                                             Icon(
-                                              Icons.lock_clock,
-                                              color: Colors.blue.shade500,
+                                              Icons.watch_later,
+                                              color: ThemeFile.bookingBlue500,
+                                              size: 20,
                                             ),
                                             BigTextWidget(
-                                              text: "1300hrs",
-                                              color: Colors.blue.shade500,
+                                              text: "13:00",
                                               size: 16,
+                                              color: ThemeFile.bookingBlue500,
                                             )
                                           ],
                                         )
                                       ],
                                     ),
-                                    Column(
+                                    Row(
                                       children: [
-                                        const Icon(
-                                          Icons.arrow_forward_ios_rounded,
-                                          color: Colors.black26,
+                                        Icon(
+                                          Icons.watch_later,
+                                          color: ThemeFile.bookingBlack1,
                                         ),
-                                        BigTextWidget(
-                                          text: "3hrs 30m",
-                                          color: Colors.black26,
-                                          size: 16,
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            BigTextWidget(
+                                              text: "50m to go",
+                                              color: ThemeFile.bookingBlack1,
+                                              size: 13,
+                                            ),
+                                            BigTextWidget(
+                                              text: "Fri 8 Apr",
+                                              color: ThemeFile.bookingBlack1,
+                                              size: 16,
+                                            ),
+                                          ],
                                         ),
                                       ],
                                     ),
@@ -194,19 +211,20 @@ class _SelectTicketPageState extends ConsumerState<SelectTicketPage> {
                                       children: [
                                         BigTextWidget(
                                           text: "Bungoma",
-                                          color: Colors.black26,
+                                          color: ThemeFile.bookingDeepBlack,
                                           size: 16,
                                         ),
                                         Row(
                                           children: [
                                             Icon(
-                                              Icons.lock_clock,
-                                              color: Colors.blue.shade500,
+                                              Icons.watch_later,
+                                              color: ThemeFile.bookingBlue500,
+                                              size: 20,
                                             ),
                                             BigTextWidget(
-                                              text: "1300hrs",
-                                              color: Colors.blue.shade500,
+                                              text: "20:00",
                                               size: 16,
+                                              color: ThemeFile.bookingBlue500,
                                             )
                                           ],
                                         )

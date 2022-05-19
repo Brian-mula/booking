@@ -9,4 +9,5 @@ class ThemeFile {
   static Color bookingDeepBlack = Colors.black87;
   static Color bookingmediumBlack = Colors.black45;
   static Color bookingpaleBlueGrey = Colors.blueGrey.shade50;
+  static Color bookingBlue500 = Colors.blue.shade500;
 }
