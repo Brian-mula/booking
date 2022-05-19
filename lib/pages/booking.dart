@@ -1,3 +1,4 @@
+import 'package:booking/pages/bookingForm.dart';
 import 'package:booking/pages/ticket_page.dart';
 import 'package:booking/theme/theme_file.dart';
 import 'package:booking/widgets/big_text_widget.dart';
@@ -19,11 +20,7 @@ class _BookingPageState extends ConsumerState<BookingPage> {
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.only(left: 0, top: 40, right: 0),
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: NetworkImage(
-                      "https://media.istockphoto.com/photos/these-seats-need-to-be-filled-picture-id889402258?b=1&k=20&m=889402258&s=170667a&w=0&h=8mgFaERc4gWBbd9pZT3vEq5GuEQUEPYdzd_AWWVonvk="),
-                  fit: BoxFit.cover)),
+          decoration: BoxDecoration(color: Colors.blueGrey.shade50),
           child: Stack(
             children: [
               Positioned(
@@ -31,19 +28,29 @@ class _BookingPageState extends ConsumerState<BookingPage> {
                   right: 0,
                   top: 0,
                   child: Container(
-                      padding: EdgeInsets.only(left: 10, top: 20, bottom: 10),
+                      padding:
+                          const EdgeInsets.only(left: 10, top: 20, bottom: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            height: 40,
-                            width: 40,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: ThemeFile.bookingwhite),
-                            child: Icon(
-                              Icons.arrow_back_ios,
-                              color: ThemeFile.bookingBlueGrey,
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const SelectTicketPage()));
+                            },
+                            child: Container(
+                              height: 40,
+                              width: 40,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: ThemeFile.bookingwhite),
+                              child: Icon(
+                                Icons.arrow_back_ios,
+                                color: ThemeFile.bookingBlueGrey,
+                              ),
                             ),
                           ),
                           Container(
@@ -251,30 +258,38 @@ class _BookingPageState extends ConsumerState<BookingPage> {
                   bottom: 0,
                   left: 0,
                   right: 0,
-                  child: Container(
-                    padding:
-                        const EdgeInsets.only(left: 10, right: 10, top: 10),
-                    decoration: BoxDecoration(
-                        color: ThemeFile.bookingYellow,
-                        borderRadius: const BorderRadius.only(
-                            bottomLeft: Radius.circular(5),
-                            bottomRight: Radius.circular(5))),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        BigTextWidget(
-                          text: "Book now",
-                          size: 14,
-                          color: ThemeFile.bookingwhite,
-                        ),
-                        const SizedBox(
-                          width: 5,
-                        ),
-                        const Icon(
-                          Icons.arrow_forward,
-                          color: ThemeFile.bookingwhite,
-                        )
-                      ],
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const BookingForm()));
+                    },
+                    child: Container(
+                      padding:
+                          const EdgeInsets.only(left: 10, right: 10, top: 10),
+                      decoration: BoxDecoration(
+                          color: ThemeFile.bookingYellow,
+                          borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(5),
+                              bottomRight: Radius.circular(5))),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          BigTextWidget(
+                            text: "Book now",
+                            size: 14,
+                            color: ThemeFile.bookingwhite,
+                          ),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          const Icon(
+                            Icons.arrow_forward,
+                            color: ThemeFile.bookingwhite,
+                          )
+                        ],
+                      ),
                     ),
                   ))
             ],

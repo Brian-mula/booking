@@ -2,6 +2,7 @@ import 'package:booking/pages/booking.dart';
 import 'package:booking/theme/theme_file.dart';
 import 'package:booking/theme/theme_file.dart';
 import 'package:booking/widgets/big_text_widget.dart';
+import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -86,85 +87,139 @@ class _SelectTicketPageState extends ConsumerState<SelectTicketPage> {
                   )
                 ]),
           ),
-          Container(
-            height: 220,
-            margin: const EdgeInsets.all(10),
-            child: PageView.builder(
-                itemCount: 6,
-                itemBuilder: (_, index) {
-                  return GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const BookingPage()));
-                    },
-                    child: Container(
-                      height: 220,
-                      margin: const EdgeInsets.only(right: 10),
-                      decoration: BoxDecoration(
-                          color: ThemeFile.bookingBlack1,
-                          borderRadius: BorderRadius.circular(8),
-                          image: const DecorationImage(
-                              image: NetworkImage(
-                                  "https://cdn.pixabay.com/photo/2015/02/24/12/03/nairobi-647336__340.jpg"),
-                              fit: BoxFit.cover)),
-                      child: Stack(children: [
-                        Positioned(
-                            left: 0,
-                            right: 0,
-                            top: 100,
-                            bottom: 0,
-                            child: Container(
-                              color: ThemeFile.bookingwhite,
-                              padding: const EdgeInsets.only(
-                                  top: 10, right: 10, left: 15),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+          Expanded(
+            child: Container(
+              margin: const EdgeInsets.all(10),
+              child: ListView.builder(
+                  itemCount: 6,
+                  itemBuilder: (_, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const BookingPage()));
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.only(top: 10),
+                        padding:
+                            const EdgeInsets.only(top: 10, left: 5, right: 10),
+                        color: Colors.white,
+                        child: Column(
+                          children: [
+                            ListTile(
+                              leading: Container(
+                                padding: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                    color: Colors.pink.shade500,
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: const Icon(
+                                  Icons.money,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              title: BigTextWidget(
+                                text: "Royal Rift",
+                                color: Colors.blue.shade700,
+                                size: 18,
+                              ),
+                              subtitle: BigTextWidget(
+                                text: "Executive(A)",
+                                size: 16,
+                                color: Colors.black38,
+                              ),
+                              trailing: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      BigTextWidget(
-                                        text: "18:00",
-                                        size: 18,
-                                        color: ThemeFile.bookingYellow,
-                                      ),
-                                      BigTextWidget(
-                                        text: "5hrs 30m",
-                                        size: 15,
-                                        color: ThemeFile.bookingBlack1,
-                                      ),
-                                      BigTextWidget(
-                                        text: "23:30",
-                                        size: 18,
-                                        color: ThemeFile.bookingYellow,
-                                      )
-                                    ],
+                                  BigTextWidget(
+                                    text: "Ksh. 1000",
+                                    size: 17,
+                                    color: Colors.blue.shade600,
                                   ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      BigTextWidget(
-                                        text: "KCY 397M",
-                                        color: ThemeFile.bookingBlueGrey,
-                                      ),
-                                      BigTextWidget(
-                                        text: "Ksh.1000",
-                                        color: ThemeFile.bookingBlueGrey,
-                                      )
-                                    ],
+                                  BigTextWidget(
+                                    text: "8 seats left",
+                                    color: Colors.pink.shade600,
+                                    size: 16,
                                   )
                                 ],
                               ),
-                            ))
-                      ]),
-                    ),
-                  );
-                }),
+                            ),
+                            const DottedLine(
+                              dashColor: Colors.black12,
+                            ),
+                            // !second card section
+                            Container(
+                              padding:
+                                  const EdgeInsets.only(top: 30, bottom: 20),
+                              child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Column(
+                                      children: [
+                                        BigTextWidget(
+                                          text: "Nairobi",
+                                          color: Colors.black26,
+                                          size: 16,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Icon(
+                                              Icons.lock_clock,
+                                              color: Colors.blue.shade500,
+                                            ),
+                                            BigTextWidget(
+                                              text: "1300hrs",
+                                              color: Colors.blue.shade500,
+                                              size: 16,
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                    Column(
+                                      children: [
+                                        const Icon(
+                                          Icons.arrow_forward_ios_rounded,
+                                          color: Colors.black26,
+                                        ),
+                                        BigTextWidget(
+                                          text: "3hrs 30m",
+                                          color: Colors.black26,
+                                          size: 16,
+                                        ),
+                                      ],
+                                    ),
+                                    Column(
+                                      children: [
+                                        BigTextWidget(
+                                          text: "Bungoma",
+                                          color: Colors.black26,
+                                          size: 16,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Icon(
+                                              Icons.lock_clock,
+                                              color: Colors.blue.shade500,
+                                            ),
+                                            BigTextWidget(
+                                              text: "1300hrs",
+                                              color: Colors.blue.shade500,
+                                              size: 16,
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    )
+                                  ]),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  }),
+            ),
           )
         ],
       ),
